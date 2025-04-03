@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import CreateAdmin from './Components/CreateAdmin'
+import { Route, Routes } from 'react-router-dom'
+import AdminDashbord from './AdminDashbord'
+import Deapartment from './Components/Deapartment'
+import Nav from './Components/Nav'
+import Sidebar from './Components/Sidebar'
+import Branch from './Components/Branch'
+import Login from './Components/Login'
+import Roles from './Components/Roles'
+import Team from './Components/Team'
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+        <Routes>
+          <Route path="/AdminDashbord" element={<AdminDashbord/>}/>
+          <Route path="/" element={<CreateAdmin/>}/>
+          <Route path="/login" element={<Login/>}/>
+          <Route path="/nav" element={<Nav/>}/>
+          <Route path="/sidebar" element={<Sidebar/>}/>
+          <Route path="/roles" element={<Roles/>}/>
+          <Route path="/branch" element={<Branch/>}/>
+          <Route path="/deapartment" element={<Deapartment/>}/>
+          <Route path="/team" element={<Team/>}/>
+        </Routes>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
+
+
